@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2B49DFC-3794-4BCB-A401-B24366AE6D43}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HotelManageMentSystem</RootNamespace>
+    <AssemblyName>HotelManageMentSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.2.618.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.2.618.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.2.618.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.2.618.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\CustomerSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerSignUp.Designer.cs">
+      <DependentUpon>CustomerSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Home.Designer.cs">
+      <DependentUpon>Customer_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer_Manage_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer_Manage_Room.Designer.cs">
+      <DependentUpon>Customer_Manage_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Add_Found_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Add_Found_Item.Designer.cs">
+      <DependentUpon>Add_Found_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Add_Lost_and_Found_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Add_Lost_and_Found_Menu.Designer.cs">
+      <DependentUpon>Add_Lost_and_Found_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CustomerEntity.cs" />
+    <Compile Include="Entity\HousekeeperEntity.cs" />
+    <Compile Include="Entity\LoginEntity.cs" />
+    <Compile Include="Entity\LostAndFoundEntity.cs" />
+    <Compile Include="Entity\PaymentEntity.cs" />
+    <Compile Include="Entity\ReceptionistEntity.cs" />
+    <Compile Include="Login\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Payment.Designer.cs">
+      <DependentUpon>Manager_Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeper\HouseKeeper_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeper\HouseKeeper_Home.Designer.cs">
+      <DependentUpon>HouseKeeper_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Lost_And_Found.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Lost_And_Found.Designer.cs">
+      <DependentUpon>Lost_And_Found.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeper\HouseKeeper_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeper\HouseKeeper_Service.Designer.cs">
+      <DependentUpon>HouseKeeper_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Update_Data_Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Update_Data_Receptionist.Designer.cs">
+      <DependentUpon>Update_Data_Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_Receptionist.Designer.cs">
+      <DependentUpon>Manager_Delete_Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_HouseKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_HouseKeeper.Designer.cs">
+      <DependentUpon>Manager_Delete_HouseKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_HouseKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_HouseKeeper.Designer.cs">
+      <DependentUpon>Manager_Manage_HouseKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeper\Update_Data_HouseKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeper\Update_Data_HouseKeeper.Designer.cs">
+      <DependentUpon>Update_Data_HouseKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_User.Designer.cs">
+      <DependentUpon>Manager_Delete_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Add_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Add_User.Designer.cs">
+      <DependentUpon>Manager_Add_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Delete_Room.Designer.cs">
+      <DependentUpon>Manager_Delete_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_Receptionist.Designer.cs">
+      <DependentUpon>Manager_Manage_Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Manage_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Manage_Room.Designer.cs">
+      <DependentUpon>Receptionist_Manage_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Service.Designer.cs">
+      <DependentUpon>Receptionist_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RoomManagerEntity.cs" />
+    <Compile Include="Entity\RoomServiceEntity.cs" />
+    <Compile Include="Room\101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\101.Designer.cs">
+      <DependentUpon>101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\102.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\102.Designer.cs">
+      <DependentUpon>102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\103.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\103.Designer.cs">
+      <DependentUpon>103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\104.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\104.Designer.cs">
+      <DependentUpon>104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\201.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\201.Designer.cs">
+      <DependentUpon>201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\202.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\202.Designer.cs">
+      <DependentUpon>202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\203.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\203.Designer.cs">
+      <DependentUpon>203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\301.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\301.Designer.cs">
+      <DependentUpon>301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\302.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\302.Designer.cs">
+      <DependentUpon>302.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\401.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\401.Designer.cs">
+      <DependentUpon>401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\402.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\402.Designer.cs">
+      <DependentUpon>402.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\403.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\403.Designer.cs">
+      <DependentUpon>403.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Add_CustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Add_CustomerDetails.Designer.cs">
+      <DependentUpon>Add_CustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\ForgetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ForgetPass.Designer.cs">
+      <DependentUpon>ForgetPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Home.Designer.cs">
+      <DependentUpon>Receptionist_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Add_HouseKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Receptionist_Add_HouseKeeping.Designer.cs">
+      <DependentUpon>Receptionist_Add_HouseKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Add_Lost_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Add_Lost_Item.Designer.cs">
+      <DependentUpon>Add_Lost_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Home.Designer.cs">
+      <DependentUpon>Manager_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_Room.Designer.cs">
+      <DependentUpon>Manager_Manage_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Login\ResetPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ResetPage.Designer.cs">
+      <DependentUpon>ResetPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Add_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Add_Room.Designer.cs">
+      <DependentUpon>Manager_Add_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager_Manage_User.Designer.cs">
+      <DependentUpon>Manager_Manage_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Update_Customer_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Update_Customer_Data.Designer.cs">
+      <DependentUpon>Update_Customer_Data.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customer\CustomerSignUp.resx">
+      <DependentUpon>CustomerSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customer_Home.resx">
+      <DependentUpon>Customer_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Customer_Manage_Room.resx">
+      <DependentUpon>Customer_Manage_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Add_Found_Item.resx">
+      <DependentUpon>Add_Found_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Add_Lost_and_Found_Menu.resx">
+      <DependentUpon>Add_Lost_and_Found_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Payment.resx">
+      <DependentUpon>Manager_Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeper\HouseKeeper_Home.resx">
+      <DependentUpon>HouseKeeper_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Lost_And_Found.resx">
+      <DependentUpon>Lost_And_Found.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeper\HouseKeeper_Service.resx">
+      <DependentUpon>HouseKeeper_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Update_Data_Receptionist.resx">
+      <DependentUpon>Update_Data_Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Delete_Receptionist.resx">
+      <DependentUpon>Manager_Delete_Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Delete_HouseKeeper.resx">
+      <DependentUpon>Manager_Delete_HouseKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Manage_HouseKeeper.resx">
+      <DependentUpon>Manager_Manage_HouseKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeper\Update_Data_HouseKeeper.resx">
+      <DependentUpon>Update_Data_HouseKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Delete_User.resx">
+      <DependentUpon>Manager_Delete_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Add_User.resx">
+      <DependentUpon>Manager_Add_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Delete_Room.resx">
+      <DependentUpon>Manager_Delete_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Manage_Receptionist.resx">
+      <DependentUpon>Manager_Manage_Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Receptionist_Manage_Room.resx">
+      <DependentUpon>Receptionist_Manage_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Receptionist_Service.resx">
+      <DependentUpon>Receptionist_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\101.resx">
+      <DependentUpon>101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\102.resx">
+      <DependentUpon>102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\103.resx">
+      <DependentUpon>103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\104.resx">
+      <DependentUpon>104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\201.resx">
+      <DependentUpon>201.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\202.resx">
+      <DependentUpon>202.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\203.resx">
+      <DependentUpon>203.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\301.resx">
+      <DependentUpon>301.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\302.resx">
+      <DependentUpon>302.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\401.resx">
+      <DependentUpon>401.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\402.resx">
+      <DependentUpon>402.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\403.resx">
+      <DependentUpon>403.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Add_CustomerDetails.resx">
+      <DependentUpon>Add_CustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\ForgetPass.resx">
+      <DependentUpon>ForgetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Receptionist_Home.resx">
+      <DependentUpon>Receptionist_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Receptionist_Add_HouseKeeping.resx">
+      <DependentUpon>Receptionist_Add_HouseKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Add_Lost_Item.resx">
+      <DependentUpon>Add_Lost_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Home.resx">
+      <DependentUpon>Manager_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Manage_Room.resx">
+      <DependentUpon>Manager_Manage_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Login\ResetPage.resx">
+      <DependentUpon>ResetPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Add_Room.resx">
+      <DependentUpon>Manager_Add_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Manager_Manage_User.resx">
+      <DependentUpon>Manager_Manage_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Update_Customer_Data.resx">
+      <DependentUpon>Update_Customer_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hompaj2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hompaj.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hompaj1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
